@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../../context";
 import { useIntersectHook } from "../../helper/intersectHook";
-import { DailyLive, Professor, newProfessor, Workshop } from "../../../asset";
+import { DailyLive, newProfessor, Workshop } from "../../../asset";
 import "./style.scss";
 
 const Highlight = () => {
@@ -36,10 +36,12 @@ const Highlight = () => {
         initial={{
           opacity: 0,
           y: 50,
+          x: 100,
         }}
         animate={{
           opacity: isIntersect && 1,
           y: isIntersect && 0,
+          x: isIntersect && 0,
         }}
         ref={conRef}
         className="highlight"

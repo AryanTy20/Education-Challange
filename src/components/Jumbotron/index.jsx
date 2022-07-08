@@ -16,7 +16,7 @@ const Jumbotron = () => {
         }}
         className="jumbo"
       >
-        <img src={newJumbo} alt="jumbobg" />
+        <img src={newJumbo} />
         <div className="jumbo-item">
           <h1>Grow your Skills to Advance Your career Path</h1>
           <motion.button
