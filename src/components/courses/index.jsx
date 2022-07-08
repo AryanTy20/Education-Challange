@@ -7,9 +7,16 @@ import {
   personalGrowth,
   Lifestyle,
 } from "../../../asset";
+
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useIntersectHook } from "../../helper/intersectHook";
 import "./style.scss";
 
 const Cource = () => {
+  const conRef = useRef(null);
+  const [isIntersect] = useIntersectHook(conRef);
+
   const Data = [
     {
       src: Art,
@@ -39,7 +46,24 @@ const Cource = () => {
 
   return (
     <>
-      <div className="courses">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 50,
+          x: 100,
+        }}
+        animate={{
+          opacity: isIntersect && 1,
+          y: isIntersect && 0,
+          x: isIntersect && 0,
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.3,
+        }}
+        ref={conRef}
+        className="courses"
+      >
         <div className="poster">
           <h2>Choose From</h2>
           <img src={Courses} alt="courseposter" />
@@ -49,7 +73,7 @@ const Cource = () => {
             <Card src={el.src} title={el.title} key={i} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

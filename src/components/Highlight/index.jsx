@@ -43,6 +43,10 @@ const Highlight = () => {
           y: isIntersect && 0,
           x: isIntersect && 0,
         }}
+        transition={{
+          type: "tween",
+          duration: 0.3,
+        }}
         ref={conRef}
         className="highlight"
       >

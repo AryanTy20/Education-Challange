@@ -1,7 +1,12 @@
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useIntersectHook } from "../../helper/intersectHook";
 import { ST1, ST2, ST3, ST4 } from "../../../asset";
 import "./style.scss";
 
 const Testimonial = () => {
+  const conRef = useRef(null);
+  const [isIntersect] = useIntersectHook(conRef);
   const Data = [
     {
       title: "Student",
@@ -31,7 +36,24 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className="testimonial">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 50,
+          x: 100,
+        }}
+        animate={{
+          opacity: isIntersect && 1,
+          y: isIntersect && 0,
+          x: isIntersect && 0,
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.3,
+        }}
+        ref={conRef}
+        className="testimonial"
+      >
         <h1>What our Customers Are Saying</h1>
 
         <div className="container">
@@ -49,7 +71,7 @@ const Testimonial = () => {
           <div className="right"></div>
           <div className="next"></div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

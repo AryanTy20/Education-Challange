@@ -1,11 +1,33 @@
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useIntersectHook } from "../../helper/intersectHook";
 import "./style.scss";
 
 const Other = () => {
+  const conRef = useRef(null);
+  const [isIntersect] = useIntersectHook(conRef);
   const handleSubmit = (e) => e.preventDefault();
 
   return (
     <>
-      <div className="other">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 50,
+          x: 100,
+        }}
+        animate={{
+          opacity: isIntersect && 1,
+          y: isIntersect && 0,
+          x: isIntersect && 0,
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.3,
+        }}
+        ref={conRef}
+        className="other"
+      >
         <div className="about">
           <h2>About Us</h2>
           <p>
@@ -34,7 +56,7 @@ const Other = () => {
             </button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
