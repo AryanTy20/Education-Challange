@@ -1,0 +1,38 @@
+.testimonial {
+  margin: 5em 2em;
+
+  h1 {
+    text-align: center;
+    margin: 1em 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .box {
+      text-align: center;
+      padding: 0.2em;
+      height: 18em;
+      width: 14em;
+
+      h4 {
+        margin: 0.5em 0;
+      }
+
+      .poster {
+        margin-inline: auto;
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

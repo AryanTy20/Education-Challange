@@ -1,0 +1,82 @@
+@use "../../variables" as *;
+
+.courses {
+  margin: 5em 2em;
+  height: 30em;
+  display: flex;
+  align-items: center;
+
+  .poster {
+    isolation: isolate;
+    height: 30em;
+    width: 40vw;
+    position: relative;
+
+    h2 {
+      position: absolute;
+      inset: 0;
+      font-size: 4rem;
+      color: white;
+      font-weight: bold;
+      z-index: 2;
+      height: fit-content;
+      padding: 0.3em;
+      text-align: center;
+      margin: 50% 1em;
+      background-color: $accent;
+    }
+
+    img {
+      filter: brightness(80%);
+      border-radius: 0.25em;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .course {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: auto/repeat(3, 1fr);
+    gap: 1em;
+
+    .card {
+      margin-left: auto;
+      position: relative;
+      isolation: isolate;
+      height: 14em;
+      width: 16em;
+      text-align: center;
+      cursor: pointer;
+      transition: all ease 0.3s;
+      border-radius: 0.25em;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+
+      h2 {
+        position: absolute;
+        display: flex;
+        inset: 0;
+        font-size: 4rem;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        z-index: 2;
+        // mix-blend-mode: overlay;
+      }
+
+      img {
+        filter: brightness(60%);
+        border-radius: 0.25em;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

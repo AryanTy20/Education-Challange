@@ -1,0 +1,158 @@
+@use "../../variables" as *;
+
+.other {
+  margin: 4em 2em;
+  display: flex;
+  justify-content: space-between;
+
+  .about {
+    flex: 1;
+    padding-right: 10em;
+  }
+
+  .contact {
+    flex: 0.6;
+    @keyframes borderAnimate {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        top: 25%;
+        left: -0.4%;
+        opacity: 1;
+        height: 55%;
+        width: 101%;
+        background-color: #f7f7f7;
+      }
+    }
+
+    form {
+      width: 80%;
+      margin: 2em 0;
+      width: 100%;
+      transition: all 0.3s;
+
+      .detail,
+      .email {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        isolation: isolate;
+
+        input,
+        textarea {
+          font-size: 1.6rem;
+          padding: 0.8em 0.5em;
+          width: 100%;
+          background-color: #f7f7f7;
+          border: none;
+          outline: none;
+          outline: solid 1px rgba(gray, 0.2);
+          border-radius: 0.25em;
+          margin: 1em 0;
+          // color: $darkGray;
+          cursor: text;
+          user-select: text;
+          z-index: 1;
+
+          &:autofill {
+            filter: none;
+            background: #f7f7f7;
+            //   color: $darkGray;
+          }
+          &:-webkit-autofill {
+            filter: none;
+            box-shadow: 0 0 100px #f7f7f7 inset;
+          }
+        }
+        input[type="password"] {
+          padding-right: 1.5em;
+        }
+
+        label {
+          position: absolute;
+          inset: 0;
+          top: -0.5em;
+          font-size: 1.4rem;
+          font-weight: bold;
+          // color: $darkGray;
+
+          &::before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            top: 18%;
+            left: -2.5%;
+            height: 70%;
+            width: 105%;
+            border: solid $accent 1.5px;
+            border-radius: 0.25em;
+            opacity: 0;
+            transition: border ease 0.3s;
+          }
+
+          a {
+            font-size: 1.2rem;
+            color: rgba(gray, 0.8);
+            cursor: pointer;
+
+            &:hover {
+              color: $accent;
+            }
+          }
+        }
+
+        &:focus-within {
+          input {
+            outline: 0;
+          }
+          label::before {
+            animation: borderAnimate 0.3s ease forwards;
+          }
+        }
+      }
+
+      button {
+        font-size: 1.6rem;
+        padding: 1em;
+        width: 100%;
+        color: white;
+        background-color: #333333;
+        outline: none;
+        border: none;
+        margin: 1em 0;
+        cursor: pointer;
+        border-radius: 0.25em;
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+          content: attr(data-value);
+          display: block;
+          position: absolute;
+          font-size: 1.6rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 400;
+          width: 100%;
+          height: 100%;
+          border-radius: 0.25em;
+          top: 0;
+          left: 0;
+          background: #a64bf4;
+          background: linear-gradient(45deg, $secondary, $accent);
+          opacity: 0;
+          transition: all 0.4s;
+        }
+
+        &:is(:hover, :focus)::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

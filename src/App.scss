@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 65.2%;
+}
+
+.light {
+  --bg: #ffffff;
+  --text: #001524;
+  // --btn-hover: #001524;
+  --btn-hover: #ba68c8;
+  // --shadow: #f5f5f5;
+  --shadow: #dad6d6;
+  --card: hsl(205, 10%, 7%, 0.1);
+  --lightText: #3b4856;
+  --footer: rgba(186, 104, 200, 0.2);
+  --text-hover: rgb(255, 35, 89);
+}
+
+.dark {
+  --bg: #001524;
+  --text: #ffffff;
+  // --btn-hover: #f5f5f5;
+  --btn-hover: #ba68c8;
+  --shadow: #00060b;
+  --card: #06243c;
+  --lightText: #acbfd4;
+  --footer: rgba(0, 6, 11, 0.2);
+  --text-hover: rgba(248, 83, 124, 1);
+}
+
+body {
+  position: relative;
+  font-family: "Poppins";
+  font-size: 1.6rem;
+  transition: all 0.3s;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

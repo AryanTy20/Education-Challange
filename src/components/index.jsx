@@ -1,0 +1,10 @@
+export { default as Navbar } from "./Navbar";
+export { default as Jumbotron } from "./Jumbotron";
+export { default as Highlight } from "./Highlight";
+export { default as Course } from "./courses";
+export { default as Footer } from "./Footer";
+export { default as Newsletter } from "./Newsletter";
+export { default as Partner } from "./Partners";
+export { default as Testimonial } from "./Testimonial";
+export { default as Membership } from "./Membership";
+export { default as Other } from "./Other";

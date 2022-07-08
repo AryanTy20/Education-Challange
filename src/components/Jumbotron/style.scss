@@ -1,0 +1,53 @@
+@use "../../variables" as *;
+
+.jumbo {
+  min-height: 90vh;
+  height: 100%;
+  position: relative;
+  right: 0;
+  // position: absolute;
+  // inset: 0;
+  isolation: isolate;
+  // top: -25%;
+  // z-index: -1;
+  margin: 0 2em;
+  display: flex;
+  align-items: center;
+
+  img {
+    position: absolute;
+    // top: -8%;
+    height: 100%;
+    width: 100%;
+    object-position: 100% 0;
+    object-fit: contain;
+    z-index: -1;
+  }
+  .jumbo-item {
+    width: 50vw;
+    margin: 0 1em;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1.2em;
+    }
+    button {
+      margin-top: 1em;
+      text-transform: uppercase;
+      padding: 0.5em 1em;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      background-color: $accent;
+      color: white;
+
+      &:is(:hover) {
+        box-shadow: 0.3em 0.3em 0 0 var(--btn-hover);
+      }
+    }
+  }
+}

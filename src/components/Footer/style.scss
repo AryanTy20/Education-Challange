@@ -1,0 +1,58 @@
+@use "../../variables" as *;
+
+.footer {
+  padding: 2em 4em;
+  background-color: var(--footer);
+  display: grid;
+  grid-template: auto/repeat(4, 1fr);
+
+  .main {
+    h3 {
+      cursor: pointer;
+    }
+
+    h4:nth-child(2) {
+      color: $accent;
+      width: fit-content;
+      border-bottom: solid 1px $accent;
+      margin: 0.5em 0;
+    }
+    h4:nth-last-child(2) {
+      margin: 1em 0;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+
+      h4 {
+        color: var(--lightText);
+      }
+
+      svg {
+        margin-left: 0.5em;
+        color: $accent;
+        cursor: pointer;
+        font-size: 2rem;
+        transition: filter 0.3s;
+
+        &:is(:hover) {
+          filter: brightness(90%);
+        }
+      }
+    }
+  }
+
+  .box {
+    li {
+      margin: 0.3em 0;
+      color: var(--lightText);
+      cursor: pointer;
+      transition: color ease 0.3s;
+
+      &:is(:hover) {
+        color: var(--text-hover);
+      }
+    }
+  }
+}

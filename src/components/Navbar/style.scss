@@ -1,0 +1,160 @@
+@use "../../variables" as *;
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 2em;
+  user-select: none;
+  background-color: transparent;
+  z-index: 99;
+  transition: all 0.3s;
+
+  // &::after {
+  //   position: absolute;
+  //   content: "";
+  //   bottom: -0.2em;
+  //   left: 0;
+  //   width: attr(data-t);
+  //   height: 0.2em;
+  //   background-color: $secondary;
+  // }
+
+  .logo {
+    cursor: pointer;
+    position: relative;
+    right: -0.5em;
+    color: var(--inverse);
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      height: 100%;
+    }
+
+    &::after {
+      top: 2em;
+      left: 55%;
+      width: 50%;
+      height: 0.8em;
+      border-bottom: solid $accent 3px;
+      border-right: solid $accent 3px;
+      transition: all ease 0.3s;
+      transform-origin: left;
+    }
+
+    &::before {
+      left: -0.5em;
+      width: 50%;
+      height: 0.8em;
+      border-left: solid $accent 3px;
+      border-top: solid $accent 3px;
+      transition: all ease 0.3s;
+    }
+
+    &:hover:before {
+      width: 110%;
+    }
+    &:hover:after {
+      left: -0.38em;
+      width: 110%;
+    }
+  }
+
+  .menu {
+    // flex: 1;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    li {
+      margin-left: 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3em;
+        width: 0%;
+        height: 0.199em;
+        background-color: $accent;
+        border-radius: 0.25em;
+        transform-origin: left;
+        transition: all ease 0.3s;
+      }
+
+      // &:not(:last-child):hover:after {
+      //   width: 100%;
+      // }
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+
+  .right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    .togTheme {
+      cursor: pointer;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      height: 3em;
+      width: 3em;
+      margin-right: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+
+      svg {
+        color: #ba68c8;
+      }
+    }
+
+    .join {
+      text-transform: uppercase;
+      padding: 0.8em 1em;
+      font-weight: 600;
+      background-color: $accent;
+      color: white;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: all 0.3s;
+
+      &:is(:hover) {
+        box-shadow: 0.3em 0.3em 0 0 var(--btn-hover);
+      }
+    }
+  }
+  .scrollIndicator {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    bottom: 100%;
+    height: 0.2em;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+    background-color: $secondary;
+    // background-color: #ff2359;
+  }
+}
+.navfixed {
+  position: sticky;
+  inset: 0;
+  transition: all 0.3s;
+  background-color: var(--bg);
+  box-shadow: 0 0 2px 1px var(--shadow);
+}
