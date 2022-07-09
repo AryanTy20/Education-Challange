@@ -81,7 +81,8 @@
 
 @media screen and(min-width:750px) and (max-width: 1000px) {
   .highlight {
-    margin: -2em 1em 1em 1em;
+    margin: 0 1em;
+    margin-top: -10em;
     padding: 0;
 
     .card {

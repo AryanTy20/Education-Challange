@@ -54,7 +54,11 @@
 
 @media screen and (max-width: 700px) {
   .Membership {
-    margin: 2em 1em;
+    margin: 6em 1em;
+
+    h1 {
+      margin: 0.5em 0;
+    }
     .container {
       flex-direction: column;
       justify-content: center;

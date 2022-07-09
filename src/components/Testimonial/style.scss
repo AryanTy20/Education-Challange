@@ -19,6 +19,11 @@
 
       h4 {
         margin: 0.5em 0;
+
+        &:last-child {
+          font-size: 1.4rem;
+          color: var(--lightText);
+        }
       }
 
       .poster {
@@ -39,7 +44,7 @@
 
 @media screen and (max-width: 700px) {
   .testimonial {
-    margin: 2em 1em;
+    margin: 1em;
     .container {
       flex-direction: column;
       justify-content: center;
@@ -52,6 +57,7 @@
         width: 16em;
         q {
           font-size: 1.2rem;
+          text-align: justify;
           line-height: -1em !important;
         }
         h4 {
