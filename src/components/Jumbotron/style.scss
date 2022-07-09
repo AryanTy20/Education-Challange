@@ -3,6 +3,8 @@
 .jumbo {
   min-height: 90vh;
   height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
   position: relative;
   right: 0;
   isolation: isolate;
