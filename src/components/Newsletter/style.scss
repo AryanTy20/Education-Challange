@@ -9,6 +9,10 @@
   padding: 1em;
   border-radius: 0.2em;
 
+  h1 {
+    text-align: center;
+  }
+
   form {
     margin: 1.5em 0;
     display: flex;
@@ -49,14 +53,6 @@
       button {
         margin: 2em 0;
       }
-    }
-  }
-}
-
-@media screen and(min-width:750px) and (max-width: 1000px) {
-  .newsLetter {
-    h1 {
-      text-align: center;
     }
   }
 }
