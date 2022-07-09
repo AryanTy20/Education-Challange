@@ -59,6 +59,7 @@
     h1 {
       margin: 0.5em 0;
     }
+
     .container {
       flex-direction: column;
       justify-content: center;
@@ -68,6 +69,11 @@
         margin: 1em 0;
         height: 18em;
         width: 15em;
+
+        h3 {
+          margin: 0.1em 0;
+          font-size: 1.6rem;
+        }
       }
     }
   }
