@@ -74,6 +74,23 @@ const Navbar = () => {
           {/* {!togMenu && <span class="line line2"></span>} */}
           <span class="line line3"></span>
         </div>
+        <div className="mobMenu" style={{ right: togMenu ? "0" : "-100%" }}>
+          <ul class="mmenu">
+            <li>Courses</li>
+            <li>Contact</li>
+            <li>About Us</li>
+          </ul>
+          <div className="mright">
+            <motion.button
+              className="join"
+              whileTap={{
+                scale: 0.98,
+              }}
+            >
+              Join Now
+            </motion.button>
+          </div>
+        </div>
         <span
           className="scrollIndicator"
           style={{ transform: `scaleX(${scrollAmmount}%)` }}

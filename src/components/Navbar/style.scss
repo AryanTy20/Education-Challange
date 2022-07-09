@@ -93,6 +93,7 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+
     .togTheme {
       cursor: pointer;
       border-radius: 50%;
@@ -145,6 +146,76 @@
     }
   }
 
+  .mobMenu {
+    position: absolute;
+    top: 100%;
+    transition: all ease 0.3s;
+    height: max-content;
+    padding: 2em;
+    background-color: var(--text);
+    border-radius: 0.1em;
+
+    .mmenu {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      li {
+        margin: 0.5em 0;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        color: var(--bg);
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -0.3em;
+          width: 0%;
+          height: 0.199em;
+          background-color: $accent;
+          border-radius: 0.25em;
+          transform-origin: left;
+          transition: all ease 0.3s;
+        }
+
+        // &:not(:last-child):hover:after {
+        //   width: 100%;
+        // }
+        &:is(:hover):after {
+          width: 100%;
+        }
+      }
+    }
+
+    .mright {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .join {
+        margin-top: 1em;
+        text-transform: uppercase;
+        padding: 0.8em 1em;
+        font-weight: 600;
+        background-color: $accent;
+        color: white;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: all 0.3s;
+
+        &:is(:hover) {
+          box-shadow: 0.3em 0.3em 0 0 var(--btn-hover);
+        }
+      }
+    }
+  }
+
   .scrollIndicator {
     position: absolute;
     left: 0;
@@ -170,9 +241,16 @@
 @media screen and (max-width: 700px) {
   .navbar {
     padding: 0.5em 1em;
-    .menu,
-    .right {
+    .menu {
       display: none;
+    }
+
+    .right {
+      margin-left: 8em;
+
+      .join {
+        display: none;
+      }
     }
 
     .logo {
@@ -184,7 +262,7 @@
         top: -0.3em;
       }
       &:after {
-        top: 1.8em;
+        top: 1.9em;
       }
     }
 
