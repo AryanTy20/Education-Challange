@@ -9,6 +9,7 @@
   background-color: transparent;
   z-index: 99;
   transition: all 0.3s;
+  overflow-x: hidden;
 
   .logo {
     cursor: pointer;
