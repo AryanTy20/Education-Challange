@@ -36,3 +36,51 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .testimonial {
+    margin: 2em 1em;
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .box {
+        margin: 1em;
+        text-align: start;
+        height: 16em;
+        width: 16em;
+        q {
+          font-size: 1.2rem;
+          line-height: -1em !important;
+        }
+        h4 {
+          text-align: center;
+          margin: 0.1em 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width:750px) and (max-width: 1000px) {
+  .testimonial {
+    margin: 2em 1em;
+    .container {
+      .box {
+        margin: 0 1em;
+        text-align: start;
+        height: 16em;
+        width: 12em;
+        q {
+          font-size: 1.2rem;
+          line-height: -1em !important;
+        }
+        h4 {
+          text-align: center;
+          margin: 0.1em 0;
+        }
+      }
+    }
+  }
+}

@@ -37,3 +37,79 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .highlight {
+    margin: 6em 1em;
+    padding: 0;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .card {
+      margin: 1em 0;
+      height: 20em;
+      width: 15em;
+
+      .poster {
+        height: 60%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .title {
+        margin: 0.3em;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .desc {
+        margin: 0 0.5em;
+        font-size: 1.3rem;
+        text-align: justify;
+        line-height: 1.3em;
+        color: var(--lightText);
+      }
+    }
+  }
+}
+
+@media screen and(min-width:750px) and (max-width: 1000px) {
+  .highlight {
+    margin: -2em 1em 1em 1em;
+    padding: 0;
+
+    .card {
+      height: 20em;
+      width: 14em;
+
+      .poster {
+        height: 60%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .title {
+        margin: 0.3em;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .desc {
+        margin: 0 0.5em;
+        font-size: 1.3rem;
+        text-align: justify;
+        line-height: 1.3em;
+        color: var(--lightText);
+      }
+    }
+  }
+}

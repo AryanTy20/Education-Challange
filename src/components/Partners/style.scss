@@ -20,3 +20,17 @@
     }
   }
 }
+
+@media screen and (max-width: 700px) {
+  .partner {
+    margin: 2em 1em;
+    .company {
+      display: grid !important;
+      grid-template: auto/repeat(2, 1fr) !important;
+
+      .imgbox {
+        margin-inline: auto;
+      }
+    }
+  }
+}

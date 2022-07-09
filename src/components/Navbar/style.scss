@@ -10,16 +10,6 @@
   z-index: 99;
   transition: all 0.3s;
 
-  // &::after {
-  //   position: absolute;
-  //   content: "";
-  //   bottom: -0.2em;
-  //   left: 0;
-  //   width: attr(data-t);
-  //   height: 0.2em;
-  //   background-color: $secondary;
-  // }
-
   .logo {
     cursor: pointer;
     position: relative;
@@ -54,10 +44,10 @@
       transition: all ease 0.3s;
     }
 
-    &:hover:before {
+    &:is(:hover):before {
       width: 110%;
     }
-    &:hover:after {
+    &:is(:hover):after {
       left: -0.38em;
       width: 110%;
     }
@@ -93,7 +83,7 @@
       // &:not(:last-child):hover:after {
       //   width: 100%;
       // }
-      &:hover:after {
+      &:is(:hover):after {
         width: 100%;
       }
     }
@@ -137,6 +127,24 @@
       }
     }
   }
+
+  .ham {
+    display: none;
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+
+    .line {
+      display: block;
+      height: 0.3em;
+      width: 100%;
+      background-color: $accent;
+      margin-top: 0.3em;
+      border-radius: 0.2em;
+      transition: all ease 0.3s;
+    }
+  }
+
   .scrollIndicator {
     position: absolute;
     left: 0;
@@ -157,4 +165,72 @@
   transition: all 0.3s;
   background-color: var(--bg);
   box-shadow: 0 0 2px 1px var(--shadow);
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    padding: 0.5em 1em;
+    .menu,
+    .right {
+      display: none;
+    }
+
+    .logo {
+      right: 0.5em;
+      transform: scale(80%);
+    }
+
+    .ham {
+      margin-left: auto;
+      position: relative;
+      display: block;
+      isolation: isolate;
+      .checkbox {
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        inset: 0;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .line1 {
+        transform-origin: 15% 135%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      .line2 {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .line3 {
+        transform-origin: 12% -40%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      input[type="checkbox"]:checked ~ .line1 {
+        transform: rotate(45deg);
+      }
+
+      input[type="checkbox"]:checked ~ .line2 {
+        transform: scaleY(0);
+      }
+
+      input[type="checkbox"]:checked ~ .line3 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media screen and(min-width:750px) and (max-width: 1020px) {
+  .navbar {
+    .logo,
+    .menu,
+    .right {
+      transform: scale(90%);
+    }
+  }
 }

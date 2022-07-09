@@ -86,7 +86,7 @@ const Box = ({ title, desc, src, name }) => {
         </div>
         <h4>{title}</h4>
         <q>{desc}</q>
-        <h4>{name}</h4>
+        <h4>-{name}</h4>
       </div>
     </>
   );

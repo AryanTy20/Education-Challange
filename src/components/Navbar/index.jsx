@@ -7,6 +7,7 @@ import "./style.scss";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [scrollAmmount, setScrollAmmount] = useState(0);
+  const [togMenu, setTogMenu] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -21,8 +22,10 @@ const Navbar = () => {
       }
     };
     window.addEventListener("scroll", Scroll);
+    window.addEventListener("touchmove", Scroll);
     return () => {
       window.removeEventListener("scroll", Scroll);
+      window.removeEventListener("touchmove", Scroll);
     };
   }, []);
 
@@ -57,6 +60,19 @@ const Navbar = () => {
           >
             Join Now
           </motion.button>
+        </div>
+        <div className="ham">
+          <input
+            class="checkbox"
+            type="checkbox"
+            name=""
+            id=""
+            onClick={() => setTogMenu(!togMenu)}
+          />
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          {/* {!togMenu && <span class="line line2"></span>} */}
+          <span class="line line3"></span>
         </div>
         <span
           className="scrollIndicator"
