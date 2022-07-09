@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`navbar ${scroll ? "navfixed" : ""} `} data-t="50%">
+      <div className={`navbar ${scroll ? "navfixed" : ""} `}>
         <div className="logo">
           <h1>EduHub</h1>
         </div>
@@ -74,7 +74,12 @@ const Navbar = () => {
           {/* {!togMenu && <span class="line line2"></span>} */}
           <span class="line line3"></span>
         </div>
-        <div className="mobMenu" style={{ right: togMenu ? "0" : "-100%" }}>
+        <div
+          className="mobMenu"
+          style={{
+            transform: togMenu ? "scaleX(100%)" : "scaleX(0)",
+          }}
+        >
           <ul class="mmenu">
             <li>Courses</li>
             <li>Contact</li>

@@ -9,7 +9,7 @@
   background-color: transparent;
   z-index: 99;
   transition: all 0.3s;
-  overflow-x: hidden;
+  isolation: isolate;
 
   .logo {
     cursor: pointer;
@@ -150,6 +150,8 @@
   .mobMenu {
     position: absolute;
     top: 100%;
+    right: 0;
+    transform-origin: right;
     transition: all ease 0.3s;
     height: max-content;
     padding: 2em;
@@ -247,6 +249,7 @@
     }
 
     .right {
+      display: none;
       position: absolute;
       right: 13%;
 
