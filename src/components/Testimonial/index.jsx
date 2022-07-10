@@ -36,42 +36,45 @@ const Testimonial = () => {
 
   return (
     <>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 50,
-          x: 100,
-        }}
-        animate={{
-          opacity: isIntersect && 1,
-          y: isIntersect && 0,
-          x: isIntersect && 0,
-        }}
-        transition={{
-          type: "tween",
-          duration: 0.3,
-        }}
-        ref={conRef}
-        className="testimonial"
-      >
-        <h1>What our Customers Are Saying</h1>
+      {" "}
+      <div className="container">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 50,
+            x: 100,
+          }}
+          animate={{
+            opacity: isIntersect && 1,
+            y: isIntersect && 0,
+            x: isIntersect && 0,
+          }}
+          transition={{
+            type: "tween",
+            duration: 0.3,
+          }}
+          ref={conRef}
+          className="testimonial"
+        >
+          <h1>What our Customers Are Saying</h1>
 
-        <div className="container">
-          {Data.map((el, i) => (
-            <Box
-              title={el.title}
-              src={el.src}
-              desc={el.desc}
-              name={el.name}
-              key={i}
-            />
-          ))}
-        </div>
-        <div className="controls">
-          <div className="right"></div>
-          <div className="next"></div>
-        </div>
-      </motion.div>
+          <div className="container">
+            {Data.map((el, i) => (
+              <Box
+                title={el.title}
+                src={el.src}
+                desc={el.desc}
+                name={el.name}
+                key={i}
+              />
+            ))}
+          </div>
+          <div className="controls">
+            <div className="right"></div>
+            <div className="next"></div>
+          </div>
+        </motion.div>
+      </div>
     </>
   );
 };

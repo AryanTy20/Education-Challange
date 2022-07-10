@@ -42,31 +42,33 @@ const Membership = () => {
 
   return (
     <>
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 50,
-          x: 100,
-        }}
-        animate={{
-          opacity: isIntersect && 1,
-          y: isIntersect && 0,
-          x: isIntersect && 0,
-        }}
-        transition={{
-          type: "tween",
-          duration: 0.3,
-        }}
-        ref={conRef}
-        className="Membership"
-      >
-        <h1>Select Membership</h1>
-        <div className="container">
-          {Data.map((el, i) => (
-            <Card title={el.title} price={el.price} perk={el.perk} key={i} />
-          ))}
-        </div>
-      </motion.div>
+      <div className="container">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 50,
+            x: 100,
+          }}
+          animate={{
+            opacity: isIntersect && 1,
+            y: isIntersect && 0,
+            x: isIntersect && 0,
+          }}
+          transition={{
+            type: "tween",
+            duration: 0.3,
+          }}
+          ref={conRef}
+          className="Membership"
+        >
+          <h1>Select Membership</h1>
+          <div className="container">
+            {Data.map((el, i) => (
+              <Card title={el.title} price={el.price} perk={el.perk} key={i} />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </>
   );
 };

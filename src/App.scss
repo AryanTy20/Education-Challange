@@ -42,13 +42,16 @@ html {
   --text-hover: rgba(248, 83, 124, 1);
 }
 
+.container {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins";
   font-size: 1.6rem;
   transition: all 0.3s;
   background-color: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
