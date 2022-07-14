@@ -79,7 +79,7 @@ const Navbar = () => {
         <div
           className="mobMenu"
           style={{
-            right: togMenu ? "10%" : "-100%",
+            right: togMenu ? "4%" : "-100%",
           }}
         >
           <ul class="mmenu">
