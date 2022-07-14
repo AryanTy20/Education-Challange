@@ -5,33 +5,33 @@ import "./style.scss";
 const Jumbotron = () => {
   return (
     <>
-      <div className="container">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: -50,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          className="jumbo"
-        >
-          <div className="poster">
-            <img src={newJumbo} />
-          </div>
-          <div className="jumbo-item">
-            <h1>Grow your Skills to Advance Your career Path</h1>
-            <motion.button
-              whileTap={{
-                scale: 0.98,
-              }}
-            >
-              Explore
-            </motion.button>
-          </div>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: -50,
+          visibility: "hidden",
+        }}
+        animate={{
+          visibility: "visible",
+          opacity: 1,
+          y: 0,
+        }}
+        className="jumbo"
+      >
+        <div className="poster">
+          <img src={newJumbo} />
+        </div>
+        <div className="jumbo-item">
+          <h1>Grow your Skills to Advance Your career Path</h1>
+          <motion.button
+            whileTap={{
+              scale: 0.98,
+            }}
+          >
+            Explore
+          </motion.button>
+        </div>
+      </motion.div>
     </>
   );
 };

@@ -1,138 +1,148 @@
 @use "../../variables" as *;
 
-.courses {
-  margin: 5em 2em;
-  display: flex;
-  align-items: center;
+.courseBox {
+  overflow-x: hidden;
+  margin: -1em 0;
+  .courses {
+    margin: 5em 2em;
+    display: flex;
+    align-items: center;
 
-  .poster {
-    isolation: isolate;
-    height: 30em;
-    width: 40vw;
-    position: relative;
-
-    h2 {
-      position: absolute;
-      inset: 0;
-      font-size: 4rem;
-      color: white;
-      font-weight: bold;
-      z-index: 2;
-      height: fit-content;
-      padding: 0.3em;
-      text-align: center;
-      margin: 50% 1em;
-      background-color: $accent;
-    }
-
-    img {
-      filter: brightness(80%);
-      border-radius: 0.25em;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .course {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template: auto/repeat(3, 1fr);
-    gap: 1em;
-
-    .card {
-      margin-left: auto;
-      position: relative;
+    .poster {
       isolation: isolate;
-      height: 14em;
-      width: 16em;
-      text-align: center;
-      cursor: pointer;
-      transition: all ease 0.3s;
-      border-radius: 0.25em;
-
-      &:hover {
-        transform: scale(1.01);
-      }
+      width: 40vw;
+      height: 29em;
+      position: relative;
 
       h2 {
         position: absolute;
-        display: flex;
         inset: 0;
         font-size: 4rem;
-        align-items: center;
-        justify-content: center;
         color: white;
         font-weight: bold;
         z-index: 2;
-        // mix-blend-mode: overlay;
+        height: fit-content;
+        padding: 0.3em;
+        text-align: center;
+        margin: 50% 1em;
+        background-color: $accent;
       }
 
       img {
-        filter: brightness(60%);
+        filter: brightness(80%);
         border-radius: 0.25em;
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        object-fit: fill;
+      }
+    }
+
+    .course {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template: auto/repeat(3, 1fr);
+      gap: 1em;
+
+      .card {
+        margin-left: auto;
+        position: relative;
+        isolation: isolate;
+        height: 14em;
+        width: 16em;
+        text-align: center;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        border-radius: 0.25em;
+
+        &:hover {
+          transform: scale(1.01);
+        }
+
+        h2 {
+          position: absolute;
+          display: flex;
+          inset: 0;
+          font-size: 4rem;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+          z-index: 2;
+          // mix-blend-mode: overlay;
+        }
+
+        img {
+          filter: brightness(60%);
+          border-radius: 0.25em;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 700px) {
-  .courses {
-    margin: -3em 1em;
-    display: block;
-    position: relative;
+  .courseBox {
+    height: 35em;
+    .courses {
+      margin: 0 1em;
+      display: block;
+      position: relative;
 
-    .poster {
-      height: 10em;
-      width: 100%;
-      h2 {
-        top: -86%;
-        position: absolute;
-        font-size: 2.8rem !important;
-      }
-      img {
-        display: none;
+      .poster {
+        height: 10em;
+        width: 100%;
+        h2 {
+          top: -86%;
+          position: absolute;
+          font-size: 2.8rem !important;
+        }
+        img {
+          display: none;
+        }
       }
     }
-  }
-  .course {
-    width: 100% !important;
-    grid-template: auto/repeat(2, 1fr) !important;
+    .course {
+      width: 100% !important;
+      grid-template: auto/repeat(2, 1fr) !important;
 
-    .card {
-      height: 7em !important;
-      width: 9em !important;
+      .card {
+        height: 7em !important;
+        width: 9em !important;
+        margin-inline: auto;
 
-      h2 {
-        font-size: 2.5rem !important;
+        h2 {
+          font-size: 2.5rem !important;
+        }
       }
     }
   }
 }
 
 @media screen and(min-width:750px) and (max-width: 1000px) {
-  .courses {
-    .poster {
-      img {
-        object-position: 0 -80% !important;
+  .courseBox {
+    .courses {
+      .poster {
+        img {
+          object-position: 0 -80% !important;
+        }
       }
     }
-  }
 
-  .course {
-    width: 60% !important;
-    grid-template: auto/repeat(2, 1fr) !important;
+    .course {
+      width: 60% !important;
+      grid-template: auto/repeat(2, 1fr) !important;
 
-    .card {
-      height: 9em !important;
-      width: 11em !important;
+      .card {
+        height: 9em !important;
+        width: 11em !important;
 
-      h2 {
-        font-size: 3rem !important;
+        h2 {
+          font-size: 3rem !important;
+        }
       }
     }
   }

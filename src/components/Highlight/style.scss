@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 700px) {
   .highlight {
-    margin: 8em 1em;
+    margin: 4em 1em;
     padding: 0;
     display: block;
     display: flex;
@@ -59,11 +59,11 @@
         img {
           height: 100%;
           width: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
       .title {
-        margin: 0.3em;
+        margin: 0.4em;
         font-size: 1.6rem;
         text-transform: uppercase;
         font-weight: bold;
@@ -81,13 +81,11 @@
 
 @media screen and(min-width:750px) and (max-width: 1000px) {
   .highlight {
-    margin: 0 1em;
-    margin-top: -10em;
+    margin: 4em 1em;
     padding: 0;
-
     .card {
-      height: 20em;
-      width: 14em;
+      height: 19em;
+      width: 13em;
 
       .poster {
         height: 60%;

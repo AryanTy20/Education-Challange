@@ -23,8 +23,8 @@ const App = () => {
       <Testimonial />
       <Other />
       <Partner />
-      <Newsletter />
-      <Footer />
+      {/* <Newsletter />
+      <Footer /> */}
     </>
   );
 };

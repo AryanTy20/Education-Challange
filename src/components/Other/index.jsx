@@ -17,8 +17,10 @@ const Other = () => {
             opacity: 0,
             y: 50,
             x: 100,
+            visibility: "hidden",
           }}
           animate={{
+            visibility: "visible",
             opacity: isIntersect && 1,
             y: isIntersect && 0,
             x: isIntersect && 0,
