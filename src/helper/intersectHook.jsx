@@ -15,7 +15,7 @@ export const useIntersectHook = (refItem, option) => {
       option
         ? option
         : {
-            rootMargin: "-30px 0px 0px 0px",
+            rootMargin: "-10px 0px 0px 0px",
             threshold: 0.2,
           }
     );
