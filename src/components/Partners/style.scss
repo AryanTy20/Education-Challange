@@ -1,9 +1,9 @@
 .partner {
-  margin: 2em;
-  text-align: center;
+  margin: 0 2em;
 
   h1 {
     margin: 1em 0;
+    text-align: center;
   }
 
   .company {
@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 700px) {
   .partner {
-    margin: 0 1em;
+    margin: 1em;
     .company {
       display: grid !important;
       grid-template: auto/repeat(2, 1fr) !important;

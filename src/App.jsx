@@ -23,7 +23,7 @@ const App = () => {
       <Testimonial />
       <Other />
       <Partner />
-      {/* <Newsletter />
+      {/*  <Newsletter />
       <Footer /> */}
     </>
   );

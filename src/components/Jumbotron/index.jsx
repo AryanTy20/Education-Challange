@@ -9,10 +9,8 @@ const Jumbotron = () => {
         initial={{
           opacity: 0,
           y: -50,
-          visibility: "hidden",
         }}
         animate={{
-          visibility: "visible",
           opacity: 1,
           y: 0,
         }}
